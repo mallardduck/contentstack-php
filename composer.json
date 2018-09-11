@@ -1,0 +1,9 @@
+{
+    "name": "contentstack/contentstack",
+    "description": "A PHP SDK for Contentstacks headless CMS API service.",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "^7.3"
+    },
+    "license": "MIT"
+}
