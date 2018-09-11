@@ -1,6 +1,6 @@
 <?php
 
-$base_folder = dirname(__DIR__);
+$base_folder = __DIR__;
 
 $composer = json_decode(file_get_contents("$base_folder/composer.json"), 1);
 $namespaces = $composer['autoload']['psr-4'];

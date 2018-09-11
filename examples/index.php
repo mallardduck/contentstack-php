@@ -8,7 +8,7 @@
 </html>
 <?php
 ini_set('display_errors', 'On');
-include_once __DIR__ . "/../src/loader.php";
+include_once __DIR__ . "/../loader.php";
 use Contentstack\Contentstack;
    $stack = Contentstack::Stack('<API-KEY>', '<ACCESS-TOKEN>', '<ENVIRONMENT>');
 try {
