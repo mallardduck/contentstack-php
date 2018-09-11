@@ -2,6 +2,8 @@
 
 namespace Contentstack\Models\ContentType;
 
+use Contentstack\Support\Utility;
+
 /*
  * BaseQuery
  * Base Class where all the Queries will be created
@@ -323,7 +325,7 @@ abstract class BaseQuery {
      * @return Query
      * */
     public function where($key = '', $value = '') {
-        if(!\Contentstack\Utility\isEmpty($key)) $this->subQuery[$key] = $value;
+        if(!Utility::isEmpty($key)) $this->subQuery[$key] = $value;
         return $this->queryObject;
     }
 
