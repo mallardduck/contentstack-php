@@ -1,14 +1,8 @@
 <?php
-/*
- * Dependency loading
- * */
-namespace Contentstack\Stack\ContentType;
+namespace Contentstack\Models;
 
-use Contentstack\Stack\ContentType\Entry\Entry;
-use Contentstack\Stack\ContentType\Query\Query;
-
-require_once __DIR__.'/entry.php';
-require_once __DIR__.'/query.php';
+use Contentstack\Models\ContentType\Query;
+use Contentstack\Models\ContentType\Entry;
 
 /*
  * Class ContentType

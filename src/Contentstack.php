@@ -1,13 +1,11 @@
 <?php
 namespace Contentstack;
 
-use Contentstack\Stack\Stack;
-
-require_once __DIR__ . '/lib/models/stack.php';
+use Contentstack\Models\Stack;
 
 /*
  *  Contentstack abstract class to provide access to Stack Object
- * */
+ */
 abstract class Contentstack {
     /*
      *  Static method for the Stack constructor
@@ -16,7 +14,7 @@ abstract class Contentstack {
      *      string|access_token   : Built.io Contentstack Stack ACCESS TOKEN of respected Stack.
      *      string|environment    : Environment whose content to be fetched.
      *  @return Stack
-     * */
+     */
     public static function Stack($api_key = '', $access_token = '', $environment = 'development') {
         return new Stack($api_key, $access_token, $environment);
     }

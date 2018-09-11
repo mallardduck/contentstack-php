@@ -1,9 +1,6 @@
 <?php
 
-namespace Contentstack\Stack\ContentType\BaseQuery;
-
-
-require_once __DIR__ . "/../helper.php";
+namespace Contentstack\Models\ContentType;
 
 /*
  * BaseQuery
@@ -19,7 +16,7 @@ abstract class BaseQuery {
             $this->queryObject = $parent;
             $this->queryObject->_query = array();
             $this->subQuery = array();
-            
+
         }elseif ($data->type === 'asset'){
             $this->stack = $data;
             $this->queryObject = $parent;
@@ -29,7 +26,7 @@ abstract class BaseQuery {
             $this->contentType = $data;
             $this->queryObject = $parent;
             $this->queryObject->_query = array();
-            $this->subQuery = array();        
+            $this->subQuery = array();
         }
     }
 
@@ -94,13 +91,13 @@ abstract class BaseQuery {
      * @param
      *      $field_uid - field on which the regular expression test is going to perform
      *      $regex - Regular Expression Object
-     * @return 
+     * @return
      * */
     public function regex() {
         $this->subQuery = call_user_func_array('contentstackRegexp', array('$regex', $this->subQuery, func_get_args()));
         return $this->queryObject;
     }
-    
+
     /*
      * logicalAND
      * Logical AND queries are pushed
@@ -414,5 +411,5 @@ abstract class BaseQuery {
         } catch(\Exception $e) {
             echo $e->getMessage();
         }
-    }   
+    }
 }
