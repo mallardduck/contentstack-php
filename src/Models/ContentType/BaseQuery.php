@@ -317,6 +317,32 @@ abstract class BaseQuery {
     }
 
     /*
+     * containedIn
+     * Query the field value from the given set of values
+     * @param
+     *      $field_uid - field in the entry against which comparision needs to be done
+     *      $value     - array value against which comparision is going to happen
+     * @return Query
+     * */
+    public function containedInReference($field = '', $value = array()) {
+        $this->subQuery = call_user_func('contentstackContains', '$in_query', $this->subQuery, $field, $value);
+        return $this->queryObject;
+    }
+
+    /*
+     * notContainedIn
+     * Query the field value other than the given set of values
+     * @param
+     *      $field_uid - field in the entry against which comparision needs to be done
+     *      $value     - array value against which comparision is going to happen
+     * @return Query
+     * */
+    public function notContainedInReference($field = '', $value = array()) {
+        $this->subQuery = call_user_func('contentstackContains', '$nin_query', $this->subQuery, $field, $value);
+        return $this->queryObject;
+    }
+
+    /*
      * where
      * Query the field which has exact value as specified
      * @params
